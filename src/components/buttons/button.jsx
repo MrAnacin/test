@@ -1,4 +1,4 @@
-import style from "./button.module.css"
+import style from "./button.module.scss"
 
 const Button = ({ text }) => {
     return (

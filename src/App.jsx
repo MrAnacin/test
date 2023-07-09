@@ -1,9 +1,10 @@
-import './App.css';
-import Profile from './pages/profile/profile';
+import Profile from "./pages/profile/profile";
+
+import style from "./app.module.scss"
 
 function App() {
   return (
-    <div className="App">
+    <div className={style.app}>
       <Profile/>
     </div>
   );
