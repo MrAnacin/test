@@ -1,13 +1,10 @@
-// import style from "./app.module.scss"
 import style from "./kursblock.module.scss"
 
-const Kursblock = (props) => {
-
+const Kursblock = ({imgblock}) => {
     return (
-            <button className={style.kursblock}>
-                <img src={props.imgblock} alt="img" />
-            </button>
-
+        <button className={style.kursblock}>
+            <img src={imgblock} alt="img" className={style.image} />
+        </button>
     )
 }
 

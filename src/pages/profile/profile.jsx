@@ -1,4 +1,4 @@
-import Button from "../../components/buttons/button"
+import Button from "../../components/button/button"
 import User from "../../components/user/user"
 import Yogaimg from '../../image/yoga.png';
 import Stretching from '../../image/stretching.png';
