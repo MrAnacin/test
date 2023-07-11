@@ -1,5 +1,6 @@
 import Button from "../../components/button/button"
 import User from "../../components/user/user"
+import ButtonUp from "../../components/buttonUp/buttonUp";
 import Yogaimg from '../../image/yoga.png';
 import Stretching from '../../image/stretching.png';
 import Bodyflex from '../../image/bodyflex.png';
@@ -30,12 +31,21 @@ export default function Profile() {
         <div className={style.course__content}>
           <div className={style.blockitem}>
             <Kursblock imgblock={Yogaimg} />
+            <div className={style.link}>
+              <ButtonUp text={"Перейти →"}/>
+            </div>
           </div>
           <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
+            <div className={style.link}>
+              <ButtonUp text={"Перейти →"}/>
+            </div>
           </div>
           <div className={style.blockitem}>
             <Kursblock imgblock={Bodyflex} />
+            <div className={style.link}>
+              <ButtonUp text={"Перейти →"}/>
+            </div>
           </div>
         </div>
       </div>

@@ -35,9 +35,9 @@ export default function Start() {
                 <Kursblock imgblock={dancfitnes} />
                 <Kursblock imgblock={step}/>
             </div>
-            <div className={style.footer}>
+            <footer className={style.footer}>
                 <ButtonUp text={"Наверх ↑"} />
-            </div>
+            </footer>
         </div>
     )
 }
