@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"kursblock.module.css"}
+{"version":3,"sources":["kursblock.module.scss","kursblock.module.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;EACA,0FACI;ACAR;;ADIA;EACI,WAAA;EACA,YAAA;EACA,mBAAA;ACDJ","file":"kursblock.module.css"}
