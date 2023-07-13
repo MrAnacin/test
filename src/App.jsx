@@ -1,11 +1,11 @@
-import Profile from "./pages/profile/profile";
+import AppRoutes from "./routes";
 
 import style from "./app.module.scss"
 
 function App() {
   return (
     <div className={style.app}>
-      <Profile/>
+      <AppRoutes/>
     </div>
   );
 }

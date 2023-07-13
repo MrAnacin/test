@@ -9,7 +9,7 @@ const User = () => {
             </svg>
             <p>Сергей</p>
             <button className={style.button}>
-                <svg alt="dropdown">
+                <svg alt="dropdown" className={style.dropdown}>
                     <use xlinkHref={`${sprite}#icon-dropdown`}></use>
                 </svg>
             </button>
