@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom';
 import logo from '../../image/logo.png';
 import yogatitle from '../../image/yogatitle.png';
 import opisanie from '../../image/opisanie.png';

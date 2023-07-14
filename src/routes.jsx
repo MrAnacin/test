@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Start from './pages/start/start';
 import Profile from './pages/profile/profile';
 import Yogapage from './pages/yogapage/yogapage';
-import Stretching from './pages/yogapage/yogapage';
+import Stretching from './pages/stretching/stretching';
 
 const AppRoutes = () => {
   return (

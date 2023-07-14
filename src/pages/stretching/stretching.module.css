@@ -1,0 +1,85 @@
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.wrapper {
+  background-color: var(--background-color-allPage);
+  padding: 30px 300px 0 140px;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.stretching {
+  height: 310px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.stretching_tytle {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.subtitle {
+  font-family: StratosSkyeng;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  width: 572px;
+  height: 96px;
+  padding-left: 25px;
+}
+
+.medicaladvice {
+  padding-top: 60px;
+}
+
+.tytle {
+  font-family: StratosSkyeng;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.text_fakt {
+  font-family: StratosSkyeng;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.circle_text {
+  display: flex;
+  gap: 20px;
+}
+
+.text_description {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}/*# sourceMappingURL=stretching.module.css.map */

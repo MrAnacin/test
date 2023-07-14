@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Kursblock from "../../components/kursblock/kursblock";
 import ButtonUp from "../../components/buttonUp/buttonUp";
-
 import yoga from "../../image/yoga.png";
 import stretching from "../../image/stretching.png";
 import bodyflex from "../../image/bodyflex.png";
@@ -29,8 +28,12 @@ export default function Start() {
                 <img src={sticker} alt="sticker" />
             </div>
             <div className={style.content}>
+            <Link to="/yogapage">
                 <Kursblock imgblock={yoga} />
-                <Kursblock imgblock={stretching} />
+            </Link>
+            <Link to="/stretching">            
+                <Kursblock imgblock={stretching} /> 
+            </Link>             
                 <Kursblock imgblock={bodyflex} />
                 <Kursblock imgblock={dancfitnes} />
                 <Kursblock imgblock={step}/>
