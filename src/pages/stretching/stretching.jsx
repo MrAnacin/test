@@ -1,5 +1,5 @@
 import logo from '../../image/logo.png';
-import stretching from '../../image/stretching.png';
+import stretching from '../../image/stretchingtitle.png';
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./stretching.module.scss";
 import circle1 from '../../image/circle1.png';
@@ -11,12 +11,16 @@ export default function Stretching() {
 return (
     <div className={style.wrapper}>
 
-        <header className={style.header}>        
-            <img src={logo} alt="logo" />        
+        <header className={style.header}>          
+                        
+            <img src={logo} alt="logo" />            
+                    
         </header>
 
-        <div className={style.stretching}>   
-            <img src={stretching} className={style.image} alt="stretching" />        
+        <div className={style.stretching}>
+            <div className={style.stretchingtext}>Стретчинг</div>       
+            <img src={stretching} className={style.image} alt="stretching" />
+                    
         </div>
         
         <div className={style.stretching_tytle}>

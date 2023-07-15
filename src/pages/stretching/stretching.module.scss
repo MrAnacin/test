@@ -17,9 +17,14 @@
 
 .stretching {    
     height: 310px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;  
+    text-align:center;
+    background-image: url('../../image/stretchingtitle.png'); 
+  background-size:cover;
+  background-position: center center;
+  display: table-cell;
+  vertical-align:middle;
+  border-radius: 50px;
+  overflow: hidden;
  }
 
 .image {
@@ -78,4 +83,15 @@ text-align: left;
     display: flex;
     justify-content: space-between;
     gap: 30px;   
+}
+
+.stretchingtext {
+    text-align: left;
+    padding-top: 20px;
+    /* margin-top: 30px; */
+    padding-left: 35px;    
+font-size: 40px;
+font-weight: 400;
+line-height: 48px;
+letter-spacing: 0em;   
 }
