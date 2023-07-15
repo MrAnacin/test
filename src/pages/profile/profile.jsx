@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from "../../components/button/button"
 import User from "../../components/user/user"
 import ButtonUp from "../../components/buttonUp/buttonUp";
@@ -8,7 +9,9 @@ import Kursblock from '../../components/kursblock/kursblock';
 import logo from '../../image/logo.png';
 import style from './profile.module.scss';
 
+
 export default function Profile() {
+ 
   return (
     <div className={style.wrapper}>
       <header className={style.header}>
@@ -32,13 +35,17 @@ export default function Profile() {
           <div className={style.blockitem}>
             <Kursblock imgblock={Yogaimg} />
             <div className={style.link}>
+            <Link to="/yogatraining">
               <ButtonUp text={"Перейти →"}/>
+            </Link>
             </div>
           </div>
           <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
             <div className={style.link}>
+            <Link to="/stretchingtraining">
               <ButtonUp text={"Перейти →"}/>
+            </Link>
             </div>
           </div>
           <div className={style.blockitem}>
