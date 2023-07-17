@@ -1,5 +1,5 @@
 import logo from '../../image/logo.png';
-import bodyflex from "../../image/bodyflex.png"
+import bodytitle from "../../image/bodytitle.png"
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./bodyflex.module.scss";
 import circle1 from '../../image/circle1.png';
@@ -14,8 +14,7 @@ return (
             <img src={logo} alt="logo" />               
         </header>
         <div className={style.top}>
-            <div className={style.top__text}>Бодифлекс</div>       
-            <img src={bodyflex} className={style.top__image} alt="bodyflex" />
+            <img src={bodytitle} className={style.top__image} alt="bodyflex" />
         </div>
         <div className={style.tytle}>
             <h2 className={style.tytle__text}> Подойдет для вас, если: </h2>        

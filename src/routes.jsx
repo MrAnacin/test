@@ -8,11 +8,12 @@ import Stretching from './pages/stretching/stretching';
 import Dancefitnes from './pages/danceFitness/danceFitness';
 import Yogatraining from './pages/yogatraining/yogatraining';
 import Stretchingtraining from './pages/stretchingtraining/stretchingtraining';
+import YogaForAuth from './pages/yogaForAuth/yogaForAuth';
 const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Start />} />
+      <Route path="/yoga-training" element={<Start />} />
       <Route path="/yoga" element={<Yoga />} />
       <Route path="/bodyflex" element={<Bodyflex />} />
       <Route path="/stretching" element={<Stretching />} />
@@ -21,6 +22,7 @@ const AppRoutes = () => {
       <Route path="/yogatraining" element={<Yogatraining />} />
       <Route path="/stretchingtraining" element={<Stretchingtraining />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/" element={<YogaForAuth />} />      
     </Routes>
   );
 };

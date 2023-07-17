@@ -1,5 +1,5 @@
 import logo from '../../image/logo.png';
-import yoga from '../../image/yoga.png';
+import yogatitle from '../../image/yogatitle.png';
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./yogapage.module.scss";
 import circle1 from '../../image/circle1.png';
@@ -13,8 +13,7 @@ export default function Yoga() {
             <img src={logo} alt="logo" />               
         </header>
         <div className={style.top}>
-            <div className={style.top__text}>Стретчинг</div>       
-            <img src={yoga} className={style.top__image} alt="bodyflex" />
+            <img src={yogatitle} className={style.top__image} alt="yoga" />
         </div>
         <div className={style.tytle}>
             <h2 className={style.tytle__text}> Подойдет для вас, если: </h2>        

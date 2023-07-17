@@ -1,5 +1,5 @@
 import logo from '../../image/logo.png';
-import step from "../../image/step.png"
+import step from "../../image/steptitle.png"
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./step.module.scss";
 import circle1 from '../../image/circle1.png';
@@ -14,8 +14,7 @@ return (
             <img src={logo} alt="logo" />               
         </header>
         <div className={style.top}>
-            <div className={style.top__text}>Бодифлекс</div>       
-            <img src={step} className={style.top__image} alt="bodyflex" />
+            <img src={step} className={style.top__image} alt="step" />
         </div>
         <div className={style.tytle}>
             <h2 className={style.tytle__text}> Подойдет для вас, если: </h2>        

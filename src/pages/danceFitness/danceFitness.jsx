@@ -1,5 +1,5 @@
 import logo from '../../image/logo.png';
-import dancefitnes from "../../image/dancfitnes.png"
+import dancefitnes from "../../image/dancetitle.png"
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./danceFitness.module.scss";
 import circle1 from '../../image/circle1.png';
@@ -14,7 +14,6 @@ return (
             <img src={logo} alt="logo" />               
         </header>
         <div className={style.top}>
-            <div className={style.top__text}>Бодифлекс</div>       
             <img src={dancefitnes} className={style.top__image} alt="bodyflex" />
         </div>
         <div className={style.tytle}>

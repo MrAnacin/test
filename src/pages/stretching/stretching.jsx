@@ -13,8 +13,7 @@ export default function Stretching() {
             <img src={logo} alt="logo" />               
         </header>
         <div className={style.top}>
-            <div className={style.top__text}>Стретчинг</div>       
-            <img src={stretching} className={style.top__image} alt="bodyflex" />
+            <img src={stretching} className={style.top__image} alt="stretching" />
         </div>
         <div className={style.tytle}>
             <h2 className={style.tytle__text}> Подойдет для вас, если: </h2>        
