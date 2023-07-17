@@ -13,7 +13,7 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/yoga-training" element={<Start />} />
+      <Route path="/" element={<Start />} />
       <Route path="/yoga" element={<Yoga />} />
       <Route path="/bodyflex" element={<Bodyflex />} />
       <Route path="/stretching" element={<Stretching />} />
@@ -22,7 +22,7 @@ const AppRoutes = () => {
       <Route path="/yogatraining" element={<Yogatraining />} />
       <Route path="/stretchingtraining" element={<Stretchingtraining />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/" element={<YogaForAuth />} />      
+      <Route path="/yoga-training" element={<YogaForAuth />} />      
     </Routes>
   );
 };
