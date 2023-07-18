@@ -28,15 +28,21 @@ export default function Start() {
                 <img src={sticker} alt="sticker" />
             </div>
             <div className={style.content}>
-            <Link to="/yogapage">
+            <Link to="/yoga">
                 <Kursblock imgblock={yoga} />
             </Link>
             <Link to="/stretching">            
                 <Kursblock imgblock={stretching} /> 
             </Link>             
+            <Link to="/bodyflex">            
                 <Kursblock imgblock={bodyflex} />
+            </Link>             
+            <Link to="/dancefitness">   
                 <Kursblock imgblock={dancfitnes} />
-                <Kursblock imgblock={step}/>
+            </Link>             
+            <Link to="/stepauerobica">   
+                <Kursblock imgblock={step} />
+            </Link>             
             </div>
             <footer className={style.footer}>
                 <ButtonUp text={"Наверх ↑"} />
