@@ -1,6 +1,7 @@
+import style from './input.module.scss';
 const Input = () => {
     return (
-        <input/>
+        <input className={style.input}/>
     )
 }
 

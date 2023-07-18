@@ -1,0 +1,21 @@
+.blockprogress {
+  width: 444px;
+  height: 554px;
+  border-radius: 12px;
+}
+
+.titleprogress {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.paragraphprogress {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.0500000007px;
+  text-align: left;
+}/*# sourceMappingURL=myprogress.module.css.map */
