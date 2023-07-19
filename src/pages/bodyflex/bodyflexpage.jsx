@@ -1,4 +1,4 @@
-import logo from '../../image/logo.png';
+import logo from '../../image/logo_log.png';
 import bodytitle from "../../image/bodytitle.png"
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./bodyflex.module.scss";

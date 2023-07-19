@@ -2,7 +2,7 @@ import User from "../../components/user/user";
 import Exercises from "../../components/exercises/exercises";
 import Progress from "../../components/progress/progress";
 
-import logo from '../../image/logo.png';
+import logo from '../../image/logo_log.png';
 import style from './yogaForAuth.module.scss';
 
 export default function YogaForAuth() {

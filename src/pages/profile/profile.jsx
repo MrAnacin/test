@@ -6,7 +6,7 @@ import Yogaimg from '../../image/yoga.png';
 import Stretching from '../../image/stretching.png';
 import Bodyflex from '../../image/bodyflex.png';
 import Kursblock from '../../components/kursblock/kursblock';
-import logo from '../../image/logo.png';
+import logo from '../../image/logo_log.png';
 import style from './profile.module.scss';
 
 

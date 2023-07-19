@@ -1,4 +1,4 @@
-import logo from '../../image/logo.png';
+import logo from '../../image/logo_log.png';
 import yogatitle from '../../image/yogatitle.png';
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./yogapage.module.scss";

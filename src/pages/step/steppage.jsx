@@ -1,4 +1,4 @@
-import logo from '../../image/logo.png';
+import logo from '../../image/logo_log.png';
 import step from "../../image/steptitle.png"
 import Coursent from '../../components/coursEnt/coursent';
 import style from "./step.module.scss";
