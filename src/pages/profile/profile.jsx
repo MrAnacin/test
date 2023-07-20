@@ -35,7 +35,7 @@ export default function Profile() {
           <div className={style.blockitem}>
             <Kursblock imgblock={Yogaimg} />
             <div className={style.link}>
-            <Link to="/yogatraining">
+            <Link to="/yoga-training">
               <ButtonUp text={"Перейти →"}/>
             </Link>
             </div>
@@ -43,7 +43,7 @@ export default function Profile() {
           <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
             <div className={style.link}>
-            <Link to="/stretchingtraining">
+            <Link to="/yoga-training">
               <ButtonUp text={"Перейти →"}/>
             </Link>
             </div>
@@ -51,7 +51,9 @@ export default function Profile() {
           <div className={style.blockitem}>
             <Kursblock imgblock={Bodyflex} />
             <div className={style.link}>
+            <Link to="/yoga-training">
               <ButtonUp text={"Перейти →"}/>
+            </Link>
             </div>
           </div>
         </div>
