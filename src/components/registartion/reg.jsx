@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../registartion/reg.module.css'
-import logo_log from '../../image/logo_log.png'
+import logo_log from '../../image/logo.png'
 import firebase from '../../firebase';
 
 const RegistrationPage = () => {
@@ -31,6 +31,7 @@ const RegistrationPage = () => {
 
     console.log('Регистрация выполнена');
   };
+
   firebase.auth().createUserWithEmailAndPassword(email, password, confirmPassword)
   .then((userCredential) => {
     // Регистрация успешна

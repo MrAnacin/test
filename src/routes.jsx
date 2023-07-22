@@ -7,6 +7,8 @@ import Step from './pages/step/steppage'
 import Stretching from './pages/stretching/stretching';
 import Dancefitnes from './pages/danceFitness/danceFitness';
 import YogaForAuth from './pages/yogaForAuth/yogaForAuth';
+import Registration from './components/registartion/reg';
+import Login from './components/registartion/login';
 const AppRoutes = () => {
 
   return (
@@ -18,7 +20,9 @@ const AppRoutes = () => {
       <Route path="/stepauerobica" element={<Step />} />
       <Route path="/dancefitness" element={<Dancefitnes />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/yoga-training" element={<YogaForAuth />} />      
+      <Route path="/yoga-training" element={<YogaForAuth />} />
+      <Route path="/reg" element={<Registration />} />     
+      <Route path="/login" element={<Login />} />     
     </Routes>
   );
 };
