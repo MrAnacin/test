@@ -1,6 +1,5 @@
 import AppRoutes from "./routes";
 import React from 'react';
-// import FireBase from "./firebase";
 
 import style from "./app.module.scss"
 
