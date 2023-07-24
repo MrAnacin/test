@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../registartion/reg.module.css'
 import logo_log from '../../image/logo.png'
-import firebase from '../../firebase';
+// import firebase from '../../firebase';
 
 const RegistrationPage = () => {
   const [email, setEmail] = useState('');
@@ -32,16 +32,16 @@ const RegistrationPage = () => {
     console.log('Регистрация выполнена');
   };
 
-  firebase.auth().createUserWithEmailAndPassword(email, password, confirmPassword)
-  .then((userCredential) => {
-    // Регистрация успешна
-    const user = userCredential.user;
-    console.log('Регистрация выполнена:', user.uid);
-  })
-  .catch((error) => {
-    // Обработка ошибок регистрации
-    console.log('Ошибка регистрации:', error.message);
-  });
+  // firebase.auth().createUserWithEmailAndPassword(email, password, confirmPassword)
+  // .then((userCredential) => {
+  //   // Регистрация успешна
+  //   const user = userCredential.user;
+  //   console.log('Регистрация выполнена:', user.uid);
+  // })
+  // .catch((error) => {
+  //   // Обработка ошибок регистрации
+  //   console.log('Ошибка регистрации:', error.message);
+  // });
 
   return (
     <div className={styles.reg_box}>
