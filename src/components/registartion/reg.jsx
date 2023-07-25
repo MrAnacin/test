@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../registartion/reg.module.css'
+import styles from '../registartion/reg.module.scss'
 import logo_log from '../../image/logo.png'
 // import firebase from '../../firebase';
 
