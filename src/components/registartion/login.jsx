@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from '../registartion/login.module.scss'
 import logo_log from '../../image/logo.png'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
@@ -23,6 +24,18 @@ const LoginPage = () => {
     console.log("Email:", email);
     console.log("Password:", password);
   };
+
+  const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+  });
 
   return (
     <div className={styles.log_box}>
@@ -51,7 +64,7 @@ const LoginPage = () => {
           />
         </div>
         <div className={styles.log_btn_box}>
-          <button className={styles.log_btn}>Войти</button>
+          <button onClick={signInWithEmailAndPassword} className={styles.log_btn}>Войти</button>
           <Link to="/reg">
             <button className={styles.reg_btn} type="submit">Зарегистрироваться</button>
           </Link>

@@ -3,6 +3,8 @@ import styles from '../registartion/reg.module.scss'
 import logo_log from '../../image/logo.png'
 // import firebase from '../../firebase';
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,17 +33,19 @@ const RegistrationPage = () => {
 
     console.log('Регистрация выполнена');
   };
+  const auth = getAuth();
 
-  // firebase.auth().createUserWithEmailAndPassword(email, password, confirmPassword)
-  // .then((userCredential) => {
-  //   // Регистрация успешна
-  //   const user = userCredential.user;
-  //   console.log('Регистрация выполнена:', user.uid);
-  // })
-  // .catch((error) => {
-  //   // Обработка ошибок регистрации
-  //   console.log('Ошибка регистрации:', error.message);
-  // });
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    
+    // Обработка ошибок регистрации
+    console.log('Ошибка регистрации:', error.message);
+  });
 
   return (
     <div className={styles.reg_box}>
@@ -60,7 +64,7 @@ const RegistrationPage = () => {
         </div>
         {passwordMatchError && <p style={{ color: 'red' }}>Пароли не совпадают</p>}
         <div className={styles.btn_reg_box}>
-          <button className={styles.btn_reg} type="submit">Зарегистрироваться</button>
+          <button onClick={createUserWithEmailAndPassword} className={styles.btn_reg} type="submit">Зарегистрироваться</button>
         </div>
       </form>
     </div>
