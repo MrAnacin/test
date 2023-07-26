@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import styles from '../registartion/login.module.scss'
 import logo_log from '../../image/logo.png'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate = useNavigate()
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -24,7 +26,7 @@ const LoginPage = () => {
     console.log("Email:", email);
     console.log("Password:", password);
   };
-
+  function Enter () {
   const auth = getAuth();
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -36,6 +38,8 @@ signInWithEmailAndPassword(auth, email, password)
     // const errorCode = error.code;
     // const errorMessage = error.message;
   });
+  navigate('/profile')
+  }
 
   return (
     <div className={styles.log_box}>
@@ -64,7 +68,7 @@ signInWithEmailAndPassword(auth, email, password)
           />
         </div>
         <div className={styles.log_btn_box}>
-          <button onClick={signInWithEmailAndPassword} className={styles.log_btn}>Войти</button>
+          <button onClick={Enter} className={styles.log_btn}>Войти</button>
           <Link to="/reg">
             <button className={styles.reg_btn} type="submit">Зарегистрироваться</button>
           </Link>

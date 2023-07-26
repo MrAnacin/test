@@ -33,6 +33,7 @@ const RegistrationPage = () => {
 
     console.log('Регистрация выполнена');
   };
+  function Reg () {
   const auth = getAuth();
 
   createUserWithEmailAndPassword(auth, email, password)
@@ -46,7 +47,7 @@ const RegistrationPage = () => {
     // Обработка ошибок регистрации
     console.log('Ошибка регистрации:', error.message);
   });
-
+}
   return (
     <div className={styles.reg_box}>
       <div>
@@ -64,7 +65,7 @@ const RegistrationPage = () => {
         </div>
         {passwordMatchError && <p style={{ color: 'red' }}>Пароли не совпадают</p>}
         <div className={styles.btn_reg_box}>
-          <button onClick={createUserWithEmailAndPassword} className={styles.btn_reg} type="submit">Зарегистрироваться</button>
+          <button onClick={Reg} className={styles.btn_reg} type="submit">Зарегистрироваться</button>
         </div>
       </form>
     </div>
