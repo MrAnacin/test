@@ -24,9 +24,12 @@ const AppRoutes = () => {
       <Route path="/yoga-training" element={<YogaForAuth />} />
       <Route path="/registration" element={<Registrationpage />} />     
       <Route path="/login" element={<Loginpage />} /> 
-      {/* <Route element={<ProtectedRoute />}>
-        <Route path="/profile" element={<Profile />} />
-      </Route>     */}
+      {/* <Route element={<ProtectedRoute />}> */}
+      {/* <Route path="/reg" element={<Registration />} />      */}
+      {/* <Route path="/login" element={<Login />} /> */}
+      {/* <Route path="/loginpage" element={<Loginpage />} />  */}
+      {/* <Route element={<ProtectedRoute />}> */}
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 };

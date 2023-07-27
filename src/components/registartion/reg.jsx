@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import styles from '../registartion/reg.module.scss'
 import logo_log from '../../image/logo.png'
 import Button from "../button/button";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const Registration = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -32,18 +34,22 @@ const Registration = () => {
 
     console.log('Регистрация выполнена');
   };
+  
+  function Reg () {
+    const auth = getAuth();
 
-  // auth.auth().createUserWithEmailAndPassword(email, password, confirmPassword)
-  // .then((userCredential) => {
-  //   // Регистрация успешна
-  //   const user = userCredential.user;
-  //   console.log('Регистрация выполнена:', user.uid);
-  // })
-  // .catch((error) => {
-  //   // Обработка ошибок регистрации
-  //   console.log('Ошибка регистрации:', error.message);
-  // });
-
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      
+      // Обработка ошибок регистрации
+      console.log('Ошибка регистрации:', error.message);
+    });
+  }
   return (
     <div className={styles.registration}>
       <div className={styles.registration__image}>
@@ -72,7 +78,7 @@ const Registration = () => {
             onChange={handleConfirmPasswordChange}
             required />
         {passwordMatchError && <p style={{ color: 'red' }}>Пароли не совпадают</p>}
-        <Button text={'Зарегистрироваться'} />
+        <Button text={'Зарегистрироваться'} onClick={Reg}/>
       </form>
     </div>
   );

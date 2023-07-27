@@ -1,101 +1,75 @@
-.center {
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
-}
-
 .wrapper {
   background-color: var(--background-color-allPage);
   padding: 30px 300px 0 140px;
   height: 100%;
+  display: flex;
+  gap: 75px;
+  flex-direction: column;
+  line-height: 32px;
+  font-size: 24px;
+  padding-bottom: 30px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
 }
 
-.stretching {
-  height: 310px;
-  text-align: center;
-  background-image: url("../../image/stretchingtitle.png");
-  background-size: cover;
-  background-position: center center;
-  display: table-cell;
-  vertical-align: middle;
-  border-radius: 50px;
-  overflow: hidden;
-}
-
-.image {
+.top__image {
   width: 100%;
-  height: 100%;
-}
-
-.stretching_tytle {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  border-radius: 50px;
 }
 
 .subtitle {
-  font-family: StratosSkyeng;
   font-size: 40px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0em;
   text-align: left;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .description {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 572px;
-  height: 96px;
+}
+.description__list {
+  margin: 25px 0 75px 0;
   padding-left: 25px;
 }
-
-.medicaladvice {
-  padding-top: 60px;
+.description__text {
+  text-align: justify;
 }
 
 .tytle {
-  font-family: StratosSkyeng;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.text_fakt {
-  font-family: StratosSkyeng;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.circle_text {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+  flex-direction: column;
 }
-
-.text_description {
+.tytle__text {
+  font-size: 40px;
+  text-align: left;
+}
+.tytle__description {
   display: flex;
   justify-content: space-between;
   gap: 30px;
 }
 
+.circle {
+  display: flex;
+  gap: 20px;
+}
+.circle__text {
+  font-size: 24px;
+  line-height: 32px;
+  text-align: left;
+  width: 244px;
+}
+.circle__image {
+  height: 67px;
+  width: 67px;
+}
+
 .stretchingtext {
   text-align: left;
-  padding-top: 20px;
-  /* margin-top: 30px; */
-  padding-left: 35px;
   font-size: 40px;
-  font-weight: 400;
   line-height: 48px;
-  letter-spacing: 0em;
 }/*# sourceMappingURL=stretching.module.css.map */
