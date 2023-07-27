@@ -3,6 +3,7 @@
 // import LoginPage from './components/registartion/login';
 import { initializeApp } from "firebase/app"
 import { getDatabase } from "firebase/database";
+import { getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
@@ -19,4 +20,6 @@ const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
 
-export default database;
+const auth = getAuth(app);
+
+export default {app, auth, database};

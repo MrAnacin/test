@@ -7,9 +7,8 @@ import Step from './pages/step/steppage'
 import Stretching from './pages/stretching/stretching';
 import Dancefitnes from './pages/danceFitness/danceFitness';
 import YogaForAuth from './pages/yogaForAuth/yogaForAuth';
-import Registration from './components/registartion/reg';
-import Login from './components/registartion/login';
 import Loginpage from './pages/loginpage/loginpage';
+import Registrationpage from './pages/registrationpage/registration';
 // import { ProtectedRoute } from './components/protected-routs/protected-routs'
 const AppRoutes = () => {
 
@@ -23,9 +22,8 @@ const AppRoutes = () => {
       <Route path="/dancefitness" element={<Dancefitnes />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/yoga-training" element={<YogaForAuth />} />
-      <Route path="/reg" element={<Registration />} />     
-      <Route path="/login" element={<Login />} />
-      <Route path="/loginpage" element={<Loginpage />} /> 
+      <Route path="/registration" element={<Registrationpage />} />     
+      <Route path="/login" element={<Loginpage />} /> 
       {/* <Route element={<ProtectedRoute />}>
         <Route path="/profile" element={<Profile />} />
       </Route>     */}

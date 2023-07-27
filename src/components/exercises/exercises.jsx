@@ -1,8 +1,20 @@
 import Button from "../button/button";
+import { setPopUp } from "../../store/slice/popUpSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 import style from "./exercises.module.scss"
 
+
 const Exercises = () => {
+
+    const dispatch = useDispatch()
+    const selector = useSelector(setPopUp)
+    const modal = selector.payload.popUp.isActive
+    
+    const handleChange = () => {
+        dispatch(setPopUp({modal: !modal}))
+    }
+
     return (
         <div className={style.wrapper}>
             <p className={style.title}>Упражнения</p>
@@ -12,7 +24,7 @@ const Exercises = () => {
                 <li>Поднятие ног, согнутых в коленях (5 повторений)</li>
             </ul>
 
-            <Button text={"Заполнить свой прогресс"}/>
+            <Button text={"Заполнить свой прогресс"} onClick={handleChange} />
         </div>
     )
 }

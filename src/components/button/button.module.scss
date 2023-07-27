@@ -1,4 +1,4 @@
-.button {
+.btn {
     background-color: var(--background-color-button);
     color: var(--color-text);
     width: 275px;
@@ -6,6 +6,10 @@
     border-radius: 46px;
     border: none;
     flex-shrink: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.05px;
 
     &:active {
         background-color: var(--background-color-button-active);
@@ -24,6 +28,8 @@
     border-radius: 46px;
     border: 1px solid #D0CECE;
     flex-shrink: 0;
+    font-size: 18px;
+    line-height: 24px;
 
     &:active {
         background-color: #F4F5F6;

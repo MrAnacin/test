@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styles from '../registartion/login.module.scss'
 import logo_log from '../../image/logo.png'
+import Button from "../button/button";
+import ButtonSingUp from "../button/buttonForSingUp";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,40 +27,34 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={styles.log_box}>
-      <div>
-        <img className={styles.logo_log_box} src={logo_log} alt="logo" />
+    <div className={styles.login}>
+      <div className={styles.login__image}>
+        <img src={logo_log} alt="logo" />
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.log_email_box}>
+      <form onSubmit={handleSubmit} className={styles.login__form}>
           <input
             placeholder="Логин"
-            className={styles.log_email}
+            className={styles.input}
             type="email"
             name="email"
             value={email}
             onChange={handleInputChange}
           />
-        </div>
-        <div className={styles.log_password_box}>
           <input
             placeholder="Пароль"
-            className={styles.log_password}
+            className={styles.input}
             type="password"
             name="password"
             value={password}
             onChange={handleInputChange}
           />
-        </div>
-        <div className={styles.log_btn_box}>
-          <button className={styles.log_btn}>Войти</button>
-          <Link to="/reg">
-            <button className={styles.reg_btn} type="submit">Зарегистрироваться</button>
+          <Button text={'Войти'}/>
+          <Link to="/registration">
+            <ButtonSingUp/>
           </Link>
-        </div>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default Login;

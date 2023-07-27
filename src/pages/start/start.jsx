@@ -16,7 +16,7 @@ export default function Start() {
         <div className={style.wrapper}>
             <header className={style.header}>
                 <img src={logoWhite} alt="logo" />
-                <Link to="/loginpage">
+                <Link to="/login">
                     <button className={style.button}>Войти</button>
                 </Link>
             </header>

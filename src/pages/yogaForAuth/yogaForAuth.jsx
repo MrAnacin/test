@@ -1,11 +1,22 @@
 import User from "../../components/user/user";
 import Exercises from "../../components/exercises/exercises";
 import Progress from "../../components/progress/progress";
+import Myprogress from "../../components/myprogress/myprogress";
 
 import logo from '../../image/logo.png';
+
 import style from './yogaForAuth.module.scss';
+// import { useState } from "react";
+// import { setPopUp } from "../../store/slice/popUpSlice";
+// import { useSelector } from "react-redux";
 
 export default function YogaForAuth() {
+
+    // const dispatch = useDispatch()
+
+    // const selector = useSelector(setPopUp)
+    // const modal = selector.payload.popUp.isActive
+
     return (
         <div className={style.wrapper}>
             <header className={style.header}>
@@ -23,6 +34,7 @@ export default function YogaForAuth() {
                 <Exercises />
                 <Progress/>
             </div>
+            <Myprogress />
         </div>
     )
 }
