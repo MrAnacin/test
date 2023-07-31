@@ -1,8 +1,13 @@
 import style from "./buttontrain.module.scss"
 
-const Buttontrain = ({ exerciseNumber }) => {
+const Buttontrain = ({ exercise, number, onClick }) => {
     return (
-        <button className={style.button}>{exerciseNumber}</button>
+        <button className={style.button} onClick={onClick}>
+            <div className={style.wrapper}>
+                <p className={style.button__title}>{exercise}</p>
+                <p className={style.button__text}> {number}</p>
+            </div>
+        </button>
     )
 }
 

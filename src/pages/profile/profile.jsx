@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import { setTrainingListPopUp } from "../../store/slice/popUpSlice";
+import { useSelector, useDispatch } from "react-redux";
+
 import Button from "../../components/button/button"
 import User from "../../components/user/user"
 import ButtonUp from "../../components/buttonUp/buttonUp";
@@ -6,11 +9,22 @@ import Yogaimg from '../../image/yoga.png';
 import Stretching from '../../image/stretching.png';
 import Bodyflex from '../../image/bodyflex.png';
 import Kursblock from '../../components/kursblock/kursblock';
+import TrainingList from '../../components/popUpTraining/popUpTrainingList'
+
 import logo from '../../image/logo.png';
 import style from './profile.module.scss';
 
 
 export default function Profile() {
+
+  const dispatch = useDispatch()
+  const selector = useSelector(setTrainingListPopUp)
+  const modal = selector.payload.popUp.forTrainingList
+
+  const handeChoiseTraining = () => {
+      dispatch(setTrainingListPopUp({modal: !modal}))
+  }
+
  
   return (
     <div className={style.wrapper}>
@@ -35,17 +49,13 @@ export default function Profile() {
           <div className={style.blockitem}>
             <Kursblock imgblock={Yogaimg} />
             <div className={style.link}>
-            <Link to="/yoga-training">
-              <ButtonUp text={"Перейти →"}/>
-            </Link>
+                <ButtonUp text={"Перейти →"} onClick={handeChoiseTraining}/>
             </div>
           </div>
           <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
             <div className={style.link}>
-            <Link to="/yoga-training">
               <ButtonUp text={"Перейти →"}/>
-            </Link>
             </div>
           </div>
           <div className={style.blockitem}>
@@ -58,6 +68,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <TrainingList/>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import Kursblock from "../../components/kursblock/kursblock";
 import ButtonUp from "../../components/buttonUp/buttonUp";
 import yoga from "../../image/yoga.png";
@@ -12,6 +13,7 @@ import logoWhite from "../../image/logoWhite.png";
 import sticker from "../../image/sticker.png";
 
 export default function Start() {
+
     return (
         <div className={style.wrapper}>
             <header className={style.header}>

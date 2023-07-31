@@ -1,5 +1,5 @@
 import Button from "../button/button";
-import { setPopUp } from "../../store/slice/popUpSlice";
+import { setMyprogressPopUp } from "../../store/slice/popUpSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 import style from "./exercises.module.scss"
@@ -8,11 +8,11 @@ import style from "./exercises.module.scss"
 const Exercises = () => {
 
     const dispatch = useDispatch()
-    const selector = useSelector(setPopUp)
-    const modal = selector.payload.popUp.isActive
+    const selector = useSelector(setMyprogressPopUp)
+    const modal = selector.payload.popUp.forProgress
     
     const handleChange = () => {
-        dispatch(setPopUp({modal: !modal}))
+        dispatch(setMyprogressPopUp({modal: !modal}))
     }
 
     return (

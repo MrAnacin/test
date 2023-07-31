@@ -2,7 +2,7 @@ import style from './myprogress.module.scss';
 import Button from '../../components/button/button';
 import Input from '../../components/input/input'
 import { useEffect, useState } from 'react';
-import { setPopUp } from "../../store/slice/popUpSlice";
+import { setMyprogressPopUp } from "../../store/slice/popUpSlice";
 import { useSelector, useDispatch } from "react-redux";
 import progress from "../../image/progress.jpg"
 
@@ -10,30 +10,29 @@ import progress from "../../image/progress.jpg"
 const Myprogress = () => {
 
   const dispatch = useDispatch()
-  const selector = useSelector(setPopUp)
-  const modal = selector.payload.popUp.isActive
+  const selector = useSelector(setMyprogressPopUp)
+  const modal = selector.payload.popUp.forProgress
   
-  const [active, setActive] = useState(false)
+  const [isActive, setIsActive] = useState(false)
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     if (modal !== "false") {
-      setActive(!active)
+      setIsActive(!isActive)
     }
-  }, [modal])
+  }, [modal]) // eslint-disable-line
 
   const wellDone = () => {
     setVisible(!visible)
-    dispatch(setPopUp({modal: "false"}))
+    dispatch(setMyprogressPopUp({modal: "false"}))
 
     setTimeout(() => {
       setVisible(visible)
-      setActive(!active)
+      setIsActive(true)
     }, 3000);
   }
 
   return (
-    <div className={`${active ? style.active : style.wrapper}`}>
+    <div className={`${isActive ? style.active : style.wrapper}`}>
       <div className={style.blockprogress}>
         {
           !visible ? (

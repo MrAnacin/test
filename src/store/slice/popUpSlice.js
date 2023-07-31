@@ -1,20 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit" 
 
 const initialState = {
-    isActive: false
+    forProgress: false,
+    forTrainingList: false,
 }
 
 const popUpSlice = createSlice({
     name: 'popUp',
     initialState,
     reducers: {
-        setPopUp: (state, { payload }) => ({
+        setMyprogressPopUp: (state, { payload }) => ({
             ...state,
-            isActive: !payload.isActive
-        })
+            forProgress: payload.forProgress
+        }),
+        setTrainingListPopUp: (state, { payload }) => ({
+            ...state,
+            forTrainingList: payload.forTrainingList
+        }),
     }
 })
 
-export const { setPopUp } = popUpSlice.actions
+export const { setMyprogressPopUp, setTrainingListPopUp } = popUpSlice.actions
 
 export default popUpSlice.reducer

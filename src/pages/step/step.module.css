@@ -1,6 +1,5 @@
 .wrapper {
   background-color: var(--background-color-allPage);
-  padding: 30px 300px 0 140px;
   height: 100%;
   display: flex;
   gap: 75px;
