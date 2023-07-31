@@ -6,6 +6,8 @@ import Button from "../button/button";
 import ButtonSingUp from "../button/buttonForSingUp";
 import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../store/slice/userSlice";
 
 
 const Login = () => {
@@ -14,6 +16,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -32,20 +35,47 @@ const Login = () => {
     console.log("Password:", password);
   };
 
-  function Enter () {
+  async function onSubmit(e) {
+    e.preventDefault();
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      // const errorCode = error.code;
-      // const errorMessage = error.message;
-    });
-    navigate('/profile')
-  }
+		await signInWithEmailAndPassword(auth, email, password)
+			.then((userData) => {
+				const user = userData.user;
+
+				dispatch(
+					setLogin({
+						userId: user.uid,
+						email: user.email,
+					})
+				);
+				localStorage.setItem("userID", user.uid);
+				localStorage.setItem("userEmail", user.email);
+				navigate("/profile");
+			})
+      .catch((error) => {
+        console.log(error.code);
+				// setIsError(true);
+				// setIsVisiblePopup(true);
+				// const errorCode = error.code;
+				// setErrorState(errorCode);
+			});
+	}
+
+
+  // function Enter () {
+  //   const auth = getAuth();
+  //   signInWithEmailAndPassword(auth, email, password)
+  //   .then((userCredential) => {
+  //     // Signed in 
+  //     const user = userCredential.user;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     // const errorCode = error.code;
+  //     // const errorMessage = error.message;
+  //   });
+  //   navigate('/profile')
+  // }
 
   return (
     <div className={styles.login}>
@@ -69,7 +99,7 @@ const Login = () => {
             value={password}
             onChange={handleInputChange}
           />
-          <Button text={'Войти'} onClick={Enter}/>
+          <Button text={'Войти'} onClick={onSubmit}/>
           <Link to="/registration">
             <ButtonSingUp/>
           </Link>  

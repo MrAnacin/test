@@ -1,3 +1,4 @@
+
 import User from "../../components/user/user";
 import Exercises from "../../components/exercises/exercises";
 import Progress from "../../components/progress/progress";
