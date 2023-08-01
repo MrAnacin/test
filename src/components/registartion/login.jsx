@@ -54,28 +54,8 @@ const Login = () => {
 			})
       .catch((error) => {
         console.log(error.code);
-				// setIsError(true);
-				// setIsVisiblePopup(true);
-				// const errorCode = error.code;
-				// setErrorState(errorCode);
 			});
 	}
-
-
-  // function Enter () {
-  //   const auth = getAuth();
-  //   signInWithEmailAndPassword(auth, email, password)
-  //   .then((userCredential) => {
-  //     // Signed in 
-  //     const user = userCredential.user;
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     // const errorCode = error.code;
-  //     // const errorMessage = error.message;
-  //   });
-  //   navigate('/profile')
-  // }
 
   return (
     <div className={styles.login}>

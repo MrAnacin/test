@@ -1,7 +1,14 @@
 import style from './input.module.scss';
-const Input = () => {
+const Input = ({onChange}) => {
+    const handleChange = (e) => {
+		onChange(e);
+	};
     return (
-        <input className={style.input} placeholder='Введите значение'/>
+        <input
+            className={style.input}
+            placeholder='Введите значение'
+            onChange={handleChange}
+        />
     )
 }
 
