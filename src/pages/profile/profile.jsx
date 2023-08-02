@@ -1,17 +1,15 @@
-import { Link } from 'react-router-dom';
 import { setTrainingListPopUp } from "../../store/slice/popUpSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getAuth, updateEmail, updatePassword } from "firebase/auth";
-import { setEmail } from "../../store/slice/userSlice";
+import { setEmail, setUserInfo } from "../../store/slice/userSlice";
+import { useGetUserByIdQuery } from '../../store/servises/usersApi';
+import { selectUserCourses } from "../../store/selectors";
 
 
 import Button from "../../components/button/button"
 import User from "../../components/user/user"
 import ButtonUp from "../../components/buttonUp/buttonUp";
-import Yogaimg from '../../image/yoga.png';
-import Stretching from '../../image/stretching.png';
-import Bodyflex from '../../image/bodyflex.png';
 import Kursblock from '../../components/kursblock/kursblock';
 import TrainingList from '../../components/popUpTraining/popUpTrainingList'
 import Input from '../../components/input/input';
@@ -38,10 +36,21 @@ const ChooseUserData = ({ onClick, setNew }) => {
 
 export default function Profile() {
 
-  const user = localStorage.getItem("userEmail");
+  const dispatch = useDispatch()
+  const userId = localStorage.getItem("userID");
+  const userName = localStorage.getItem("userEmail");
+
+  const { isSuccess, data } = useGetUserByIdQuery(userId);
+  
+  useEffect(() => {
+    isSuccess && data && dispatch(setUserInfo(data));
+  }, [isSuccess]);
+
+  const courses = useSelector(selectUserCourses);
+  const courseArr = Object.keys(courses);
+  console.log(courseArr);
 
   const auth = getAuth();
-  const dispatch = useDispatch()
   const selector = useSelector(setTrainingListPopUp)
   const modal = selector.payload.popUp.forTrainingList
 
@@ -90,7 +99,7 @@ export default function Profile() {
       <div className={style.user}>
         <h2 className={style.title}>Moй профиль</h2>
         <div className={style.user__data}>
-          <h3 className={style.user__data_text}>Логин: {user} </h3>
+          <h3 className={style.user__data_text}>Логин: {userName} </h3>
           <h3 className={style.user__data_text}>Пароль: *********</h3>
         </div>
         <div className={style.user__button}>
@@ -116,12 +125,16 @@ export default function Profile() {
         <h2 className={style.title}>Mои курсы</h2>
         <div className={style.course__content}>
           <div className={style.blockitem}>
-            <Kursblock imgblock={Yogaimg} />
-            <div className={style.link}>
-                <ButtonUp text={"Перейти →"} onClick={handeChoiseTraining}/>
-            </div>
+            {courseArr.map((name, index) => (
+              <>
+                <Kursblock key={index} imgblock={name} />   
+                <div className={style.link}>
+                    <ButtonUp text={"Перейти →"} onClick={handeChoiseTraining}/>
+                </div>
+              </>
+            ))}
           </div>
-          <div className={style.blockitem}>
+          {/* <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
             <div className={style.link}>
               <ButtonUp text={"Перейти →"}/>
@@ -134,7 +147,7 @@ export default function Profile() {
               <ButtonUp text={"Перейти →"}/>
             </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <TrainingList/>
