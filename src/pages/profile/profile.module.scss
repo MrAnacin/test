@@ -53,18 +53,11 @@
 
     &__content {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        gap: 40px
     }
 }
 
-.blockitem {
-    flex-grow: 1
-}
-
 .link {
-    transform: translate(8%, -170%);
+    transform: translate(-340px, 460px);
 }
 
 .chooseData {

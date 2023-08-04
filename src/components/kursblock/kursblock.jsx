@@ -8,44 +8,44 @@ import Dance from '../../image/dancfitnes.png'
 
 const Kursblock = ({ imgblock }) => {
 
-  // const getImg = () => {
-	// 	switch (imgblock) {
-	// 	case "yoga":
-	// 		return {
-	// 			img: Yoga,
-	// 			alt: "Йога",
-	// 		};
-	// 	case "stretching":
-	// 		return {
-	// 			img: Stretching,
-	// 			alt: "Стретчинг",
-	// 		};
-	// 	case "step_aerobics":
-	// 		return {
-	// 			img: Step,
-	// 			alt: "Степ-аэробика",
-	// 		};
-	// 	case "dance_fitness":
-	// 		return {
-	// 			img: Dance,
-	// 			alt: "Танцевальный фитнес",
-	// 		};
-	// 	case "bodyflex":
-	// 		return {
-	// 			img: BodyFlex,
-	// 			alt: "Бодифлекс",
-	// 		};
+  const getImg = () => {
+		switch (imgblock) {
+		case "Yoga":
+			return {
+				img: Yoga,
+				alt: "Йога",
+			};
+		case "Stretching":
+			return {
+				img: Stretching,
+				alt: "Стретчинг",
+			};
+		case "StepAerobics":
+			return {
+				img: Step,
+				alt: "Степ-аэробика",
+			};
+		case "DanceFitness":
+			return {
+				img: Dance,
+				alt: "Танцевальный фитнес",
+			};
+		case "BodyFlex":
+			return {
+				img: BodyFlex,
+				alt: "Бодифлекс",
+			};
 
-	// 	default:
-	// 		break;
-	// 	}
-  // };
+		default:
+			break;
+		}
+  };
   
-  // let { img, alt } = getImg();
+  const { img, alt } = getImg();
   
   return (
-    <button className={style.kursblock}>      
-        {/* <img src={img}  alt={alt} className={style.image} />  */}
+    <button className={style.kursblock} >      
+        <img src={img}  alt={alt} className={style.image} /> 
     </button>
   );
 };

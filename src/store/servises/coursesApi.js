@@ -4,11 +4,11 @@ export const coursesApi = createApi({
 	reducerPath: "coursesApi",
 	baseQuery: fetchBaseQuery({
 		baseUrl:
-			"https://fitness-pro-team5-default-rtdb.europe-west1.firebasedatabase.app/",
+			"https://fitness-pro-team5-default-rtdb.europe-west1.firebasedatabase.app",
 	}),
 	endpoints: (build) => ({
 		getCourses: build.query({
-			query: () => "courses.json",
+			query: () => `courses.json`,
 		}),
 		getCourseByName: build.query({
 			query: (name) => `courses/${name}.json`,

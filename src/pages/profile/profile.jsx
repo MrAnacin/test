@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { getAuth, updateEmail, updatePassword } from "firebase/auth";
 import { setEmail, setUserInfo } from "../../store/slice/userSlice";
 import { useGetUserByIdQuery } from '../../store/servises/usersApi';
-import { selectUserCourses } from "../../store/selectors";
+import { selectUserCourses } from '../../store/selectors'
+
 
 
 import Button from "../../components/button/button"
@@ -46,9 +47,10 @@ export default function Profile() {
     isSuccess && data && dispatch(setUserInfo(data));
   }, [isSuccess]);
 
+
   const courses = useSelector(selectUserCourses);
-  const courseArr = Object.keys(courses);
-  console.log(courseArr);
+  let coursesArr = Array.from(Object.keys(courses))
+  console.log(coursesArr);
 
   const auth = getAuth();
   const selector = useSelector(setTrainingListPopUp)
@@ -121,11 +123,11 @@ export default function Profile() {
             }
         </div>
       </div>
+      <TrainingList/>
       <div className={style.course}>
         <h2 className={style.title}>Mои курсы</h2>
         <div className={style.course__content}>
-          <div className={style.blockitem}>
-            {courseArr.map((name, index) => (
+            {coursesArr.map((name, index) => (
               <>
                 <Kursblock key={index} imgblock={name} />   
                 <div className={style.link}>
@@ -133,7 +135,6 @@ export default function Profile() {
                 </div>
               </>
             ))}
-          </div>
           {/* <div className={style.blockitem}>
             <Kursblock imgblock={Stretching} />
             <div className={style.link}>
@@ -150,7 +151,6 @@ export default function Profile() {
           </div> */}
         </div>
       </div>
-      <TrainingList/>
     </div>
   );
 }
