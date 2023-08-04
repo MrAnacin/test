@@ -33,8 +33,6 @@ const ChooseUserData = ({ onClick, setNew }) => {
     </div>
   ) 
 }
-
-
 export default function Profile() {
 
   const dispatch = useDispatch()
@@ -47,10 +45,12 @@ export default function Profile() {
     isSuccess && data && dispatch(setUserInfo(data));
   }, [isSuccess]);
 
-
   const courses = useSelector(selectUserCourses);
-  let coursesArr = Array.from(Object.keys(courses))
-  console.log(coursesArr);
+  let coursesArr = []
+  
+  for(const key in courses){
+    coursesArr.push(key)
+  }
 
   const auth = getAuth();
   const selector = useSelector(setTrainingListPopUp)
@@ -127,7 +127,7 @@ export default function Profile() {
       <div className={style.course}>
         <h2 className={style.title}>Mои курсы</h2>
         <div className={style.course__content}>
-            {coursesArr.map((name, index) => (
+            {coursesArr?.map((name, index) => (
               <>
                 <Kursblock key={index} imgblock={name} />   
                 <div className={style.link}>
@@ -135,20 +135,6 @@ export default function Profile() {
                 </div>
               </>
             ))}
-          {/* <div className={style.blockitem}>
-            <Kursblock imgblock={Stretching} />
-            <div className={style.link}>
-              <ButtonUp text={"Перейти →"}/>
-            </div>
-          </div>
-          <div className={style.blockitem}>
-            <Kursblock imgblock={Bodyflex} />
-            <div className={style.link}>
-            <Link to="/yoga-training">
-              <ButtonUp text={"Перейти →"}/>
-            </Link>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
