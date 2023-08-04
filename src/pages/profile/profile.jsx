@@ -32,8 +32,6 @@ const ChooseUserData = ({ onClick, setNew }) => {
     </div>
   ) 
 }
-
-
 export default function Profile() {
 
   const dispatch = useDispatch()
@@ -45,10 +43,14 @@ export default function Profile() {
   useEffect(() => {
     isSuccess && data && dispatch(setUserInfo(data));
   }, [isSuccess]);
-
+  
   const courses = useSelector(selectUserCourses);
-  const courseArr = Object.keys(courses);
+  console.log(courses);
+  let courseArr = null
+  if (courseArr) {    
+  courseArr = Object.keys(courses);
   console.log(courseArr);
+}
 
   const auth = getAuth();
   const selector = useSelector(setTrainingListPopUp)
@@ -125,7 +127,7 @@ export default function Profile() {
         <h2 className={style.title}>Mои курсы</h2>
         <div className={style.course__content}>
           <div className={style.blockitem}>
-            {courseArr.map((name, index) => (
+            {courseArr?.map((name, index) => (
               <>
                 <Kursblock key={index} imgblock={name} />   
                 <div className={style.link}>
